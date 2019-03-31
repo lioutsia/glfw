@@ -61,6 +61,9 @@
 // GLFW uses DirectInput8 interfaces
 #define DIRECTINPUT_VERSION 0x0800
 
+// GLFW uses OEM cursor resources
+#define OEMRESOURCE
+
 #include <wctype.h>
 #include <windows.h>
 #include <dinput.h>
@@ -103,6 +106,9 @@
 #endif
 #ifndef USER_DEFAULT_SCREEN_DPI
  #define USER_DEFAULT_SCREEN_DPI 96
+#endif
+#ifndef OCR_HAND
+ #define OCR_HAND 32649
 #endif
 
 #if WINVER < 0x0601
