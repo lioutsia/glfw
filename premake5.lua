@@ -3,8 +3,8 @@ project "GLFW"
     language "C"
     staticruntime "On"
     
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	targetdir (tmpdir .. "/bin/" .. outputdir .. "/%{prj.name}")
+    objdir (tmpdir .. "/bin-int/" .. outputdir .. "/%{prj.name}")
 
 	files
 	{
@@ -49,3 +49,7 @@ project "GLFW"
     filter "configurations:Debug"
         runtime "Debug"
         symbols "on"
+
+    filter "configurations:Release"
+        runtime "Release"
+        optimize "on"
