@@ -41,10 +41,38 @@ project "GLFW"
             "_GLFW_WIN32",
             "_CRT_SECURE_NO_WARNINGS"
 		}
-    
-    filter "system:windows"
+
+    filter "system:linux"
+        buildoptions { "-std=c11" }
         systemversion "latest"
 
+        files
+        {
+            "src/context.o",
+            "src/egl_context.c",
+            "src/glx_context.c",
+            "src/init.c",
+            "src/input.c",
+            "src/linux_joystick.c",
+            "src/monitor.c",
+            "src/osmesa_context.c",
+            "src/posix_thread.c",
+            "src/posix_time.c",
+            "src/vulkan.c",
+            "src/window.c",
+            "src/x11_init.c",
+            "src/x11_monitor.c",
+            "src/x11_window.c",
+            "src/xkb_unicode.c"
+
+        }
+
+        defines
+        {
+            "_GLFW_X11",
+            "_GLFW_INCLUDE_GLU",
+            "_GLFW_GLX"
+        }
 
     filter "configurations:Debug"
         runtime "Debug"
